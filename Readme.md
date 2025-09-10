@@ -27,4 +27,4 @@ Application de gestion de produits développée avec Spring Boot et Thymeleaf.
 
 1. Cloner le dépôt :
    ```bash
-   git clone https://github.com/faroukali99/Magazin_de_technologie/tree/master
+   git clone https://github.com/faroukali99/Magazin_de_technologie
