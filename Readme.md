@@ -13,7 +13,7 @@ Application de gestion de produits développée avec Spring Boot et Thymeleaf.
 ## Technologies utilisées
 
 - **Backend** : Spring Boot, Spring Data JPA
-- **Base de données** : H2 (en mémoire)
+- **Base de données** : PostgreSql
 - **Frontend** : Thymeleaf, Bootstrap
 - **Outils de build** : Maven
 
