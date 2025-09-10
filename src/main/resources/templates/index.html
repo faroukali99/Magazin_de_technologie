@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Products</h2>
+
+    <a th:href="@{/product/form}" class="btn btn-primary mb-3">Add New Product</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}" th:object="${product}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{type}"></td>
+            <td th:text="*{brand}"></td>
+            <td th:text="*{model}"></td>
+            <td th:text="${'$' + product.price}"></td>
+            <td>
+                <a th:href="@{/product/form/{id}(id=*{id})}" class="btn btn-sm btn-warning">Edit</a>
+                <form th:action="@{/product/delete/{id}(id=*{id})}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this product?')">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
